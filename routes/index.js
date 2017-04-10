@@ -6,6 +6,12 @@ router.get('./register', function (req, res, next) {
 	return res.send('Register today!');
 });
 
+//POST /register
+router.post('.register', function (req, res, next) {
+	return res.send('User created!');
+});
+
+
 // GET /
 router.get('/', function (req, res, next) {
 	return res.render('index', {
