@@ -3,7 +3,10 @@ var router = express.Router();
 
 //GET /register
 router.get('/register', function (req, res, next) {
-	return res.send('Register today!);
+	//	return res.send('Register today!);
+	return res.render('register', {
+		title: 'Sign Up'
+	});
 });
 
 //POST /register
@@ -33,4 +36,4 @@ router.get('/contact', function (req, res, next) {
 	});
 });
 
-module.exports = router; 
+module.exports = router;
