@@ -5,6 +5,7 @@ var app = express();
 
 //mongodb connection
 mongoose.connect("mongodb://localhost:27017/bookworm");
+var db = mongoose.connection;
 
 // parse incoming requests
 app.use(bodyParser.json());
