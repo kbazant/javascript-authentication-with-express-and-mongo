@@ -20,4 +20,6 @@ var UserSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	}
-})
+});
+var User = mongoose.model('User', UserSchema);
+module.exports = User;
