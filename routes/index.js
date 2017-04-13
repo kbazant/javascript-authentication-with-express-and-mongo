@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/user');
 
 //GET /register
 router.get('/register', function (req, res, next) {
@@ -10,7 +11,7 @@ router.get('/register', function (req, res, next) {
 
 //POST /register
 router.post('/register', function (req, res, next) {
-	return res.send('User created!');
+	
 });
 
 
