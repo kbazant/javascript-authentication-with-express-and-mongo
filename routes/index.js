@@ -11,8 +11,24 @@ router.get('/register', function (req, res, next) {
 
 //POST /register
 router.post('/register', function (req, res, next) {
-	
-});
+	if (req.body.email &&
+		req.body.name &&
+		req.body.favoriteBook &&
+		req.body.password &&
+		req.body.confirmPassword) {
+
+		// confirm that user typed same password twice
+		if (req.body.password !== req.body.confirmPassword) {
+			var err = new Error('Passwords do not match.');
+			error.status = 400;
+			return next(err);
+		}
+	} else {
+		var err = new Error('All fields required.');
+		err.status = 400;
+		return next(err);
+	}
+})
 
 
 // GET /
