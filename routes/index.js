@@ -7,7 +7,7 @@ router.get('/register', function (req, res, next) {
 	return res.render('register', {
 		title: 'Sign Up'
 	});
-});
+
 
 //POST /register
 router.post('/register', function (req, res, next) {
@@ -23,12 +23,21 @@ router.post('/register', function (req, res, next) {
 			error.status = 400;
 			return next(err);
 		}
+		
+		//create object with form input
+		var userData = {
+			emai: req.body.email,
+			name: req.body.name,
+			favoriteBook: req.body.favoriteBook,
+			password: req.body.password
+		};
+		
 	} else {
 		var err = new Error('All fields required.');
 		err.status = 400;
 		return next(err);
 	}
-})
+}); 
 
 
 // GET /
@@ -53,3 +62,4 @@ router.get('/contact', function (req, res, next) {
 });
 
 module.exports = router;
+	 
